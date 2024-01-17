@@ -1,3 +1,16 @@
+trigger:
+-main
+
 pool: MyAgentPool
+  vmImage: ubuntu-latest
+
+variables:
+  buildConfiguration: 'Release'
+
 steps:
-- bash: echo hello world
+task: DotNetCoreCLI@2
+  displayName: 'Build the project'
+  inputs:
+    command: 'build'
+    arguments: '--no-restore --configuration $(buildConfiguration)'
+    projects: '**/*.csproj'

@@ -9,8 +9,8 @@ variables:
 
 steps:
   task: DotNetCoreCLI@2
-    displayName: 'Build the project'
-    inputs:
-      command: 'build'
-      arguments: '--no-restore --configuration $(buildConfiguration)'
-      projects: '**/*.csproj'
+  displayName: 'Build the project'
+  inputs:
+    command: 'build'
+    arguments: '--no-restore --configuration $(buildConfiguration)'
+    projects: '**/*.csproj'
